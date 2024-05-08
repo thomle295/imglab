@@ -1,0 +1,1 @@
+{"images": {"file_name": "0001-01234567-thang001.png", "height": 311, "width": 654, "id": 1}, "type": "instances", "categories": [{"supercategory": "none", "id": 1, "name": "uncategorized"}], "annotations": [{"segmentation": [[194, 109, 443, 70, 480, 187, 174, 215]], "area": 31226, "iscrowd": 0, "image_id": 1, "bbox": [174, 70, 306, 145], "category_id": 1, "id": 1, "ignore": 0}]}

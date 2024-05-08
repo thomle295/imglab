@@ -25,6 +25,7 @@ function selectFileTypeToSave(){
         backgroundDismiss: true,
     });
 }
+let xhr = new XMLHttpRequest();
 
 /**
  * Save project file in Nimn format
@@ -110,6 +111,31 @@ function saveAsCOCO(){
         analytics_reportExportType("coco");
         download(JSON.stringify(cocoData), fileName, "application/json", "utf-8");
     });
+}
+function exportCoCoFile()
+{
+    
+    // window.alert();
+    let tail_name = filename.split(".")
+    tail_name = tail_name[tail_name.length-1]
+    var cocoData = cocoFormater.toCOCO(labellingData);
+    let formData = new FormData();
+    let export_filename = filename.replace("."+tail_name,"");
+    json_data = JSON.stringify(cocoData);
+    formData.append("json", json_data);
+    formData.append("filename",export_filename);
+    formData.append("imgs",imgSelected.src);                   
+    xhr.open("POST", 'http://103.63.121.200:9001/save');
+    xhr.send(formData);
+    xhr.onload = function() {
+        if (xhr.status != 200) { // analyze HTTP status of the response
+          alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
+        } else { // show the result
+          alert(`upload to server success`); // response is the server response
+        }
+      };
+
+
 }
 
 /**

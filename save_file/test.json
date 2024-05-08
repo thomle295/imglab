@@ -1,0 +1,8 @@
+{"images":[{"file_name":"3d-system-demo.png","height":308,"width":607,"id":1},
+{"file_name":"318465892_546346367357449_8271757608057629360_n.jpg","height":767,"width":535,"id":2},
+{"file_name":"123123.png","height":1080,"width":1920,"id":3}],
+"type":"instances",
+"annotations":[{"segmentation":[[178,116,373,99,368,181,178,185]],"area":14507.5,"iscrowd":0,"image_id":1,"bbox":[178,99,195,86],"category_id":1,"id":1,"ignore":0},
+{"segmentation":[[151,190,446,196,425,405,70,323]],"area":57819,"iscrowd":0,"image_id":2,"bbox":[70,190,376,215],"category_id":1,"id":1,"ignore":0},
+{"segmentation":[[395,125,794,124,789,288,397,272]],"area":61511.5,"iscrowd":0,"image_id":3,"bbox":[395,124,399,164],"category_id":1,"id":1,"ignore":0}],
+"categories":[{"supercategory":"none","id":1,"name":"uncategorized"}]}

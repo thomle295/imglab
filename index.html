@@ -51,6 +51,7 @@
 	<script src="js/thirdparty/jquery-confirm.min.js"></script>
 	<script src="js/thirdparty/bootstrap.min.js"></script>
 	<script src="js/thirdparty/riot.min.js"></script>
+	<script src="js/savefile.js"></script>
 
 	<script src="js/thirdparty/Blob.js"></script>
 	<script src="js/thirdparty/FileSaver.min.js"></script>
@@ -67,14 +68,17 @@
 		<div id="menubar" class="row overlay-color align-items-center" style="height: 50px;">
 			<div class="col-3 col-sm-2 col-md-1 col-xl-1 no-pl">
 				<menu-dropdown></menu-dropdown>
+				<button type="button" onclick="exportCoCoFile()">EXPORT</button>
 			</div>
+
 			<div class="col-6 col-sm-6 col-md-7 col-xl-7 text-center">
 				<!-- form-inline input-group -->
 				<div class="row justify-content-center align-content-center">
 					<a href="https://github.com/NaturalIntelligence/imglab">
 						<img src="img/imglab_logo.png" height="48px" style="margin-top: 2px">
 					</a>
-					<span style="font-size: 2em; margin-top:5px;">Img Lab</span>
+					<span id="labelName" style="font-size: 2em; margin-top:5px;">Img Lab</span>
+					
 				</div>
 			</div>
 			<div class="col-3 col-sm-4 col-md-4 col-xl-4">
@@ -142,6 +146,8 @@
 	<script src="tags/actions/colorpicker-action.tag.html" type="riot/tag"></script>
 
 	<script type="text/javascript">
+		let thumbnails = [];
+		let filename = "";
 		eventBus = riot.observable();
         riot.mount("cookie-alert");
 		riot.mount("menu-dropdown, plugins-menu, shortcuts");

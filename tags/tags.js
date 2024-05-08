@@ -1,3 +1,4 @@
+let filename ="";
 riot.tag2('actionbar', '<div id="actionbar"> </div>', 'actionbar #actionbar,[data-is="actionbar"] #actionbar{ height: 40px; width: 100%; border: 1px solid grey; }', '', function(opts) {
 });
 riot.tag2('facepp', '<input onchange="{saveKey}" class="form-control" type="text" name="api_key" id="fpp_api_key" placeholder="api_key" riot-value="{pluginsStore.facepp.key}"> <input onchange="{saveSecret}" class="form-control" type="text" name="api_secret" id="fpp_api_secret" placeholder="api_secret" riot-value="{pluginsStore.facepp.secret}"> <br> <input onclick="{fetchFpp}" class="btn fppBtn" type="button" name="faceppBtn" id="faceppBtn" value="Plot with Face++">', 'facepp .fppBtn,[data-is="facepp"] .fppBtn{ background: #17a2b8; width: 100%;color: white; }', '', function(opts) {
@@ -180,6 +181,7 @@ riot.tag2('images-slider', '<div class="float-left" style="width: 50px; height: 
                 photolist.animate({ left: "-"+this.sliderMove }, 200, 'linear', () => {
                     photolist.css({ left: 0 })
                         .append(photolist.children('img:first-child'));
+                    
                     this.sliding = false;
                 });
             }
@@ -197,8 +199,12 @@ riot.tag2('images-slider', '<div class="float-left" style="width: 50px; height: 
         }
 
         function loadIntoWorkArea(e){
+            filename = e.title;
+            window.alert(filename);
             imgSelected = e.item;
             riot.mount("workarea",{ img : e.item});
+
+
         }
 });
 riot.tag2('menu', '<div class="dropdown" style="left: -50px"> <div class="dropbtn"><img src="img/icons/menu.svg" width="40px"></div> <div class="dropdown-content"> <a href="#"> <label class="btn-bs-file">Open <input id="browse" type="file" class="filebutton" accept=".fpp,.nimn,.xml,.json" onchange="{openFile}"> </label> </a> <a href="#" onclick="{saveFile}">Save</a> </div> </div>', '', '', function(opts) {

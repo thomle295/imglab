@@ -1,0 +1,85 @@
+{
+    "images": [
+        {
+            "file_name": "3d-system-demo.png",
+            "height": 308,
+            "width": 607,
+            "id": 1
+        }
+    ],
+    "type": "instances",
+    "annotations": [
+        {
+            "segmentation": [
+                [
+                    315,
+                    56,
+                    528,
+                    76,
+                    499,
+                    185,
+                    210,
+                    48,
+                    110,
+                    153,
+                    257,
+                    237,
+                    430,
+                    272
+                ]
+            ],
+            "area": 20388.5,
+            "iscrowd": 0,
+            "image_id": 1,
+            "bbox": [
+                110,
+                48,
+                418,
+                224
+            ],
+            "category_id": 1,
+            "id": 1,
+            "ignore": 0
+        },
+        {
+            "segmentation": [
+                [
+                    31,
+                    38,
+                    128,
+                    45,
+                    187,
+                    138,
+                    98,
+                    208,
+                    29,
+                    155
+                ]
+            ],
+            "area": 18303.5,
+            "iscrowd": 0,
+            "image_id": 1,
+            "bbox": [
+                29,
+                38,
+                158,
+                170
+            ],
+            "category_id": 2,
+            "id": 2,
+            "ignore": 0
+        }
+    ],
+    "categories": [
+        {
+            "supercategory": "none",
+            "id": 1,
+            "name": "car"
+        },
+        {
+            "supercategory": "none",
+            "id": 2,
+            "name": "cat"
+        }
+    ]
+}
